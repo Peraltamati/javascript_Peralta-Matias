@@ -1,6 +1,6 @@
 
 
-var nombre= prompt("Hola, Como te llamas");
+/*var nombre= prompt("Hola, Como te llamas");
 var edad= prompt("¿que edad tenes?");
 
 alert("Hola "+nombre+". Tenes: "+edad+"años");
@@ -14,7 +14,40 @@ var area;
 
 area=(base*altura)/2;
 
-alert("El area del triangulo es: "+area+" cm²");
+alert("El area del triangulo es: "+area+" cm²");*/
+
+let numero= prompt("Ingrese un numero entero determinar si es par o impar: ");
+
+if(numero % 2 == 0 ){
+
+    alert("El numero " +numero+ " es par");
+
+
+}else {
+    alert("El numero " +numero+ " es impar");
+}
+
+let edad = prompt("Ingrese su edad para saber a que categoria compite: ");
+
+if(edad >=12 && edad <=14){
+    alert("Estas en la categoria Infantil");
+}else if(edad >14 && edad<=16 ){
+    alert("Estas en la categoria Cadetes");
+}else if(edad >16 && edad<=18){
+    alert("Estas en la categoria Juveniles");
+}else if(edad >18 && edad<=20){
+    alert("Estas en la categoria Junior");
+}else if(edad >20 && edad<=30){
+    alert("Estas en la categoria Mayores");
+}else{
+    alert("No tenes la edad requerida para competir");
+}
+
+
+
+
+
+
 
 
 
