@@ -16,7 +16,7 @@ area=(base*altura)/2;
 
 alert("El area del triangulo es: "+area+" cm²");*/
 
-let numero= prompt("Ingrese un numero entero determinar si es par o impar: ");
+/*let numero= prompt("Ingrese un numero entero determinar si es par o impar: ");
 
 if(numero % 2 == 0 ){
 
@@ -41,8 +41,21 @@ if(edad >=12 && edad <=14){
     alert("Estas en la categoria Mayores");
 }else{
     alert("No tenes la edad requerida para competir");
-}
+}*/
 
+let cant= prompt("Ingrese la cantidad de notas del alumno");
+
+let promedio=0;
+let suma=0;
+for (i=1;i<=cant;i++){//inicie con i=1 cuando en realidad es i=0 y puse "<=" para que cuando inicie diga nota 1, nota 2... y no diga nota 0, nota 1...
+notas=prompt("Ingrese la nota "+i, "");
+notas=parseInt(notas);
+
+suma=suma+notas;
+
+}
+promedio=(suma)/cant;
+alert("El promedio del alumno es: "+promedio);
 
 
 
