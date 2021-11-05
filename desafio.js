@@ -47,7 +47,7 @@ if(edad >=12 && edad <=14){
 
 
 
-    function operando(){ 
+    /*function operando(){ 
     let cant= prompt("Ingrese la cantidad de notas del alumno");
 
     let prom=0;
@@ -63,16 +63,16 @@ if(edad >=12 && edad <=14){
     alert("El promedio del alumno es: "+prom);
 
 }
-operando();
+operando();*/
 
 
-/*function operacion(){
-    let nume= prompt("Ingrese la cantidad de numeros que va a ingresar");
+function operaciones(){
+    let n= prompt("Ingrese la cantidad de numeros que va a ingresar");
     let porcentaje=0.50;
     let iva=0.16;
     let suma=0;
     
-    for(i=0; i<nume; i++){
+    for(i=0; i<n; i++){
         nume=prompt("Ingrese el numero: ");
         nume=parseInt(nume);
         suma=suma+nume;
@@ -88,17 +88,19 @@ operando();
     }else{
         alert("datos mal ingresados");
     }
+    
 }
+operaciones();
 
-operacion();*/
 
-/*function op(){
-    let num= prompt("Ingrese la cantidad de numeros que va a ingresar para saber si es par o impar");
+
+function op(){
+    let cantidad= prompt("Ingrese la cantidad de numeros que va a ingresar para saber si es par o impar");
     let porc=0.37;
     let iv=0.16;
     let suma=0;
   
-    for(i=0;i<num;i++){
+    for(i=0;i<cantidad;i++){
         num=prompt("Ingrese el numero: ");
         num=parseInt(num);
        suma=suma+num;
@@ -115,23 +117,10 @@ operacion();*/
     }else{
         alert("datos mal ingresados");
     }
+    
 }
 
-op();*/
+op();
 
-/*function opera(){
-    let numero= prompt("ingrese la cant de numeros que va a ingresar:");
-    let porcentaje=0.50;
-    let iva=0.16;
-    let suma=0;
 
-    for(i=0; i<numero; i++){
-        numero= prompt("ingrese el numero: "):
-        numero=parseInt(numero);
-        suma=suma+numero;
-        
-    }
-    alert("la suma es "+suma);
-}
-
-opera();*/
+     
