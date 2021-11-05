@@ -43,24 +43,95 @@ if(edad >=12 && edad <=14){
     alert("No tenes la edad requerida para competir");
 }*/
 
-let cant= prompt("Ingrese la cantidad de notas del alumno");
 
-let promedio=0;
-let suma=0;
-for (i=1;i<=cant;i++){//inicie con i=1 cuando en realidad es i=0 y puse "<=" para que cuando inicie diga nota 1, nota 2... y no diga nota 0, nota 1...
-notas=prompt("Ingrese la nota "+i, "");
-notas=parseInt(notas);
 
-suma=suma+notas;
+
+
+    function operando(){ 
+    let cant= prompt("Ingrese la cantidad de notas del alumno");
+
+    let prom=0;
+    let suma=0;
+    for (i=1;i<=cant;i++){//inicie con i=1 cuando en realidad es i=0 y puse "<=" para que cuando inicie diga nota 1, nota 2... y no diga nota 0, nota 1...
+    notas=prompt("Ingrese la nota "+i, "");
+    notas=parseInt(notas);
+    
+    suma=suma+notas;
+    
+    }
+    prom=(suma)/cant;
+    alert("El promedio del alumno es: "+prom);
 
 }
-promedio=(suma)/cant;
-alert("El promedio del alumno es: "+promedio);
+operando();
 
 
+/*function operacion(){
+    let nume= prompt("Ingrese la cantidad de numeros que va a ingresar");
+    let porcentaje=0.50;
+    let iva=0.16;
+    let suma=0;
+    
+    for(i=0; i<nume; i++){
+        nume=prompt("Ingrese el numero: ");
+        nume=parseInt(nume);
+        suma=suma+nume;
 
+    }
+    if(suma>100){
+                
+        porcentaje=suma*porcentaje;
+        alert(`El porcentaje de la suma mayor a 100 es : ${porcentaje}`);
+    }else if(suma<100){
+        iva=suma*iva;
+        alert(`El iva de la suma menor a 100 es : ${iva}`);
+    }else{
+        alert("datos mal ingresados");
+    }
+}
 
+operacion();*/
 
+/*function op(){
+    let num= prompt("Ingrese la cantidad de numeros que va a ingresar para saber si es par o impar");
+    let porc=0.37;
+    let iv=0.16;
+    let suma=0;
+  
+    for(i=0;i<num;i++){
+        num=prompt("Ingrese el numero: ");
+        num=parseInt(num);
+       suma=suma+num;
 
+    }
+    if(suma % 2 == 0){
+                
+        porc=suma*porc;
+        alert(`El porcentaje de la suma de numeros par es : ${porc}`);
+    }else if(suma % 2 !==0){
+        
+        iv=suma*iv;
+        alert(`El el iva de la suma de numeros impar es : ${iv}`);
+    }else{
+        alert("datos mal ingresados");
+    }
+}
 
+op();*/
 
+/*function opera(){
+    let numero= prompt("ingrese la cant de numeros que va a ingresar:");
+    let porcentaje=0.50;
+    let iva=0.16;
+    let suma=0;
+
+    for(i=0; i<numero; i++){
+        numero= prompt("ingrese el numero: "):
+        numero=parseInt(numero);
+        suma=suma+numero;
+        
+    }
+    alert("la suma es "+suma);
+}
+
+opera();*/
