@@ -47,7 +47,11 @@ if(edad >=12 && edad <=14){
 
 
 
-    /*function operando(){ 
+
+//DESAFIO FUNCIONES  Simulador interactivo !!!
+alert("INICIO DE Simulador interactivo");
+
+    function operando(){ 
     let cant= prompt("Ingrese la cantidad de notas del alumno");
 
     let prom=0;
@@ -63,8 +67,13 @@ if(edad >=12 && edad <=14){
     alert("El promedio del alumno es: "+prom);
 
 }
-operando();*/
+operando();
+alert("FIN DE Simulador interactivo");
 
+
+alert("INICIO DE DESAFIO COMPLEMENTARIO");
+
+// DESAFIO COMPLEMENTARIO!!!
 
 function operaciones(){
     let n= prompt("Ingrese la cantidad de numeros que va a ingresar");
