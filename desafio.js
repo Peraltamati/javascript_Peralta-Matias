@@ -46,7 +46,7 @@ if(edad >=12 && edad <=14){
 
 
 
-
+/*
 
 //DESAFIO FUNCIONES  Simulador interactivo !!!
 alert("INICIO DE Simulador interactivo");
@@ -130,6 +130,33 @@ function op(){
 }
 
 op();
+*/
+
+//CLASE OBJETOS!!!
+ 
+class Pro{
+    constructor(nombre, codigo, precio){
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.precio = precio;
+}
+sumaIva() {
+    this.precio = this.precio * 1.21;
+}
+mostrarDatos(){
+    
+		console.log(`Nombre del producto: ${this.nombre} codigo: ${this.codigo} precio + iva: ${this.precio}`);
+	
+}
 
 
-     
+}
+
+let nom= prompt("nombre del producto: ");
+cod= prompt("codigo del producto: ");
+cod=parseInt(cod);
+ pre= prompt("precio: ");
+ pre=parseFloat(pre);
+ const producto1 = new Pro(nom,cod, pre);
+producto1.sumaIva();
+ producto1.mostrarDatos();
