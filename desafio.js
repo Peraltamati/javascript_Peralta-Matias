@@ -131,9 +131,9 @@ function op(){
 
 op();
 */
-
-//CLASE OBJETOS!!!
- 
+//--------------------------*******ARRAY********---------------------------
+//ARRAY!!!
+ let productoss=[];
 class Pro{
     constructor(nombre, codigo, precio){
         this.nombre = nombre;
@@ -151,12 +151,21 @@ mostrarDatos(){
 
 
 }
+ let cantidad= prompt("Ingrese la cantidad de productos que va a ingresar");
+ for(i=0; i<cantidad; i++){
 
-let nom= prompt("nombre del producto: ");
-cod= prompt("codigo del producto: ");
-cod=parseInt(cod);
- pre= prompt("precio: ");
- pre=parseFloat(pre);
- const producto1 = new Pro(nom,cod, pre);
-producto1.sumaIva();
- producto1.mostrarDatos();
+    let nom= prompt("nombre del producto: ");
+    nom=String(nom);
+    cod= prompt("codigo del producto: ");
+    cod=parseInt(cod);
+     pre= prompt("precio: ");
+     pre=parseFloat(pre);
+     const producto1 = new Pro(nom,cod, pre);
+     producto1.sumaIva();
+     console.log(productoss=[producto1]);
+}
+
+
+
+
+
