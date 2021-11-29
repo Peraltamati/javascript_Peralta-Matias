@@ -131,8 +131,8 @@ function op(){
 
 op();
 */
-//--------------------------*******ARRAY********---------------------------
-//ARRAY!!!
+//--------------------------*******DOM********---------------------------
+//DOM!!!
 
  let productoss=[];
  let mostrarProductos = document.querySelector("#productos");
