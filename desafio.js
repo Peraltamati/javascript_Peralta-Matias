@@ -133,25 +133,27 @@ op();
 */
 //--------------------------*******ARRAY********---------------------------
 //ARRAY!!!
+
  let productoss=[];
+ let mostrarProductos = document.querySelector("#productos");
 class Pro{
     constructor(nombre, codigo, precio){
-        this.nombre = nombre;
+        this.nombre = nombre.toUpperCase();
         this.codigo = codigo;
-        this.precio = precio;
+        this.precio = parseFloat(precio);
 }
 sumaIva() {
     this.precio = this.precio * 1.21;
 }
-mostrarDatos(){
-    
-		console.log(`Nombre del producto: ${this.nombre} codigo: ${this.codigo} precio + iva: ${this.precio}`);
-	
-}
 
 
 }
+
+let nom= prompt('Como te llamas: ')
+let saludo= document.querySelector("#welcome");
+saludo.innerHTML = `<h3>Bienvenido/a ¡${nom}! </h3>`
  let cantidad= prompt("Ingrese la cantidad de productos que va a ingresar");
+ 
  for(i=0; i<cantidad; i++){
 
     let nom= prompt("nombre del producto: ");
@@ -160,10 +162,27 @@ mostrarDatos(){
     cod=parseInt(cod);
      pre= prompt("precio: ");
      pre=parseFloat(pre);
-     const producto1 = new Pro(nom,cod, pre);
+     const producto1 = new Pro(nom,cod,pre);
      producto1.sumaIva();
-     console.log(productoss=[producto1]);
+   
+     
+    productoss=[producto1];
+    for(j=0; j<productoss.length; j++){
+   
+        mostrarProductos.innerHTML +=`
+        <div>
+        <h3> ${productoss[j].nombre}</h3> 
+        <p>Cod: ${productoss[j].codigo}</p>
+        <p>Precio + Iva: $${productoss[j].precio}</p>
+        <button>Comprar</button>
+        </div><br>
+        `
+    }
+  
+     
 }
+
+
 
 
 
