@@ -1,5 +1,11 @@
 
-
+class Produ{
+    constructor(nombre, codigo, precio){
+        this.nombre = nombre.toUpperCase();
+        this.codigo = codigo;
+        this.precio = parseFloat(precio);
+}
+}
 const form  = document.querySelector("#form");
 //const input = document.querySelector("#Nombre_Producto");
 const evento = 'submit';
@@ -16,6 +22,7 @@ function validacion(){
 		
 	}
 }*/
+  
 form.addEventListener(evento, recogerDatos);
 function recogerDatos(e){
     e.preventDefault();
@@ -27,10 +34,31 @@ function recogerDatos(e){
     
     let suma= parseFloat(precio) * 1.21;
   
+    function listaLS(listas){
+        const tareasJSON = JSON.stringify(listas);
+        localStorage.setItem("listas", tareasJSON);
+    }
+    
+    const lista = localStorage.getItem("listas");
+    let productos;
 
-let productos=[];
+    if(lista === null){
+        productos = [];
+    }else{
+        productos = JSON.parse(lista);
+    }
+
+const producto1 = new Produ(nombre,codi,suma);
+productos.push(producto1);
+listaLS(productos);
+
+
+
 
 let mostrarProductos = document.querySelector("#productos");
+let mostrarProductos2 = document.querySelector("#guardado"); 
+
+
 
 mostrarProductos.innerHTML +=`
     <div>
@@ -39,11 +67,20 @@ mostrarProductos.innerHTML +=`
     <p>Precio + Iva: $${suma}</p>
     </div><br>
     `
+    for(i=0; i<productos.length; i++){
 
-for(i=0; i<productos.length; i++){
-   const element = productos[i];
-   mostrarProductos+= element + " ";
-    
-}
+        mostrarProductos2.innerHTML +=`
+        <div>
+        <h3> ${productos[i].nombre}</h3> 
+        <p>Cod: ${productos[i].codigo}</p>
+        <p>Precio + Iva: $${productos[i].precio}</p>
+        
+        </div><br>
+        `
+  
+        
+    }
+
+
 }
 
