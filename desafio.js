@@ -1,42 +1,53 @@
 
 
 
+// ****************14. AJAX con jQuery***************
 
-// DESAFIO "**** 12. jQuery: selectores y eventos ****"
-$("MisProductos").append('<button id="btn"> boton ejercicio</button>');
+const APIURL = `https://saint-seiya-api.herokuapp.com/api/characters/`;
+const Saint = $('#caballeros')
 
-const tiendas = [];
+const renderData = (CaballerosZodiaco) => {
 
-class tienda{
-    constructor(nombre, precio){
-        this.id = tiendas.length;
-        this.nombre = nombre.toUpperCase();
-        this.precio = Number(precio);
+    const SaintSeiya = $('#SaintSeiya');
+    SaintSeiya.prepend(`
+                        <div class="card" style="width: 18rem;">
+                        <img src=" " class="card-img-top" alt=" ">
+                        <div class="card-body">
+                         <h5 class="card-title">${CaballerosZodiaco.name}</h5>
+                             <ul>
+                                 <li>Caballero Id: ${CaballerosZodiaco.id}</li>
+                                 <li>Cloth: ${CaballerosZodiaco.cloth}</li>
+                                 <li>Group: ${CaballerosZodiaco.group}</li>
+                                 <li>rank: ${CaballerosZodiaco.rank}</li>
+                             </ul>
+    </div>
+</div>`);
+}
+
+const getData = (valorIdZodiaco) => {
+
+    $.ajax({
+        method: "GET",
+        url: APIURL + `${valorIdZodiaco}`,
+        success: (repuesta) => {
+            console.log(repuesta);
+            renderData(repuesta);
+        },
+        error: () => {
+            alert('Algo salio mal');
+        }
+    })
+}
+
+$('#renderCaballero').click(()=>{
+    let valorIdZodiaco = Number(Saint[0].value);
+    console.log(valorIdZodiaco);
+
+    if(Number.isInteger(valorIdZodiaco) && valorIdZodiaco >0 && valorIdZodiaco <781){
+        getData(valorIdZodiaco);
+    }else {
+        alert('Tiene que ser un entero entre 1 y 780');
     }
+})
 
-    mostrar(){
-        return `El Producto: ${this.nombre}, Tiene un valor de: $ ${this.precio}`;
-    } 
-}
-
-tiendas.push(new tienda("Monitor 27 samsung", '25000'));
-tiendas.push(new tienda("Monitor  Gamer Asus LED 27'", '25000'));
-tiendas.push(new tienda("Monitor Gamer LG LED 25'", '53800'));
-tiendas.push(new tienda("CPU armada AMD A6 7480", '48000'));
-
-function seleccion(id){
-
-    let innerSelect = '';
-    tiendas.forEach(producto => innerSelect += `<option value='${producto.id}'>${producto.nombre}</option>` )
-
-    return `<select  id="${id}">${innerSelect}</select>`;
-}
-
-$('body').append(seleccion('ElegirProducto'));
-$('#ElegirProducto').change(function (e){
-    e.preventDefault();
-
-    const seleccionar = tiendas.find(elemento => elemento.id == e.target.value);
-
-    $("body").append(`<h3>${seleccionar.mostrar()}</h3>`)
-});
+// ****************Tercera Entrega del Proyecto Final*********************

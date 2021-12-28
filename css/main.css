@@ -2,8 +2,9 @@
 .cuerpo{
 
     text-align: center;
-    background-color: aquamarine;
+   background: url(/media/caballeros.png);
+   background-size: 100%;
 }
-h2{
-    color:deepskyblue;
+h1{
+    color:rgb(161, 190, 243);
 }
